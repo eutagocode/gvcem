@@ -1,2 +1,3 @@
 @import "./global/global.css";
-@import "./pages/partials/home/index.css";
+@import "./pages/home/partials/index.css";
+@import "./pages/home/partials/addGoal.css";
