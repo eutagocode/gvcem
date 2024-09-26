@@ -11,6 +11,7 @@
     max-height: 850px;
     height: auto;
     background: var(--color-dark-1);
+    position: relative;
 }
 
 .header-content {
