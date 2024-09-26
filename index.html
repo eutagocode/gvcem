@@ -42,9 +42,24 @@
                 <div class="group-btn">
                     <button>Add valor</button>
                     <button>Remover valor</button>
-                    <button>Add meta do mês</button>
+                    <button onclick="showFormCreateGoal()">
+                        Add meta do mês
+                    </button>
                 </div>
+                <section class="shadow-section">
+                    <div class="add-goal-content">
+                        <h3>Adicionar valor á meta</h3>
+                        <input
+                            id="input-goal"
+                            inputmode="numeric"
+                            type="number"
+                            placeholder="R$00,00"
+                        />
+                        <button onclick="createGoal()">ADICIONAR</button>
+                    </div>
+                </section>
             </section>
         </div>
+        <script src="./assets/js/app.js"></script>
     </body>
 </html>
