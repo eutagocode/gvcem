@@ -104,9 +104,9 @@ function getBusinessDays(year, month) {
 }
 
 function createGoal() {
-    const inputGoal = document.getElementById("input-goal").value;
+    const inputGoal = document.getElementById("input-goal");
 
-    const data = new GoalData(inputGoal);
+    const data = new GoalData(inputGoal.value);
 
     data.sold = "";
     data.daily = "";
@@ -115,7 +115,6 @@ function createGoal() {
 
     fetchGoal();
 
-    inputGoal = "";
     document.querySelector(".shadow-section").style.display = "none";
 }
 
@@ -126,15 +125,14 @@ function showFormSoldValue() {
 function handleSoldValue() {
     const data = JSON.parse(localStorage.getItem("DATA_OF_GOAL") || "[]");
 
-    const inputValue = document.querySelector("#input-sold").value;
+    const inputValue = document.querySelector("#input-sold");
 
-    data.sold += parseFloat(inputValue);
+    data.sold += parseFloat(inputValue.value);
     data.daily = (parseFloat(data.goal) - parseFloat(data.sold)) / data.days;
 
     localStorage.setItem("DATA_OF_GOAL", JSON.stringify(data));
 
     fetchGoal();
 
-    inputValue = "";
     document.querySelector(".shadow-section-2").style.display = "none";
 }
