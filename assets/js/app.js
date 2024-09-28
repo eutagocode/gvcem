@@ -115,6 +115,7 @@ function createGoal() {
 
     fetchGoal();
 
+    inputGoal = "";
     document.querySelector(".shadow-section").style.display = "none";
 }
 
@@ -134,5 +135,6 @@ function handleSoldValue() {
 
     fetchGoal();
 
+    inputValue = "";
     document.querySelector(".shadow-section-2").style.display = "none";
 }
