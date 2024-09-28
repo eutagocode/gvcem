@@ -123,17 +123,22 @@ function handleSoldValue() {
     const inputValue = document.querySelector("#input-sold");
 
     soldValue = data.sold + parseFloat(inputValue.value);
-    data.daily = (parseFloat(data.goal) - parseFloat(data.sold)) / data.days;
 
     data.sold = parseFloat(soldValue);
 
-    if (data.sold > data.goal) {
-        data.daily = 0;
-    }
-
     localStorage.setItem("DATA_OF_GOAL", JSON.stringify(data));
+
+    updateDaily();
 
     fetchGoal();
 
     document.querySelector(".shadow-section-2").style.display = "none";
+}
+
+function updateDaily() {
+    const data = JSON.parse(localStorage.getItem("DATA_OF_GOAL") || "[]");
+
+    data.daily = (data.goal - data.sold) / data.days;
+
+    localStorage.setItem("DATA_OF_GOAL", JSON.stringify(data));
 }
