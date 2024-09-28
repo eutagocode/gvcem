@@ -1,8 +1,3 @@
-// [x] Criar um objeto para receber os dados da meta
-// [x] Criar a tela que aparecerá para adicionar a nova meta
-// [x] Adicionar a função de pegar o valor da meta e lançar no objeto
-// [x] Guardar os dados da meta no localStorage
-// [] Pegar os dados e colocar em tela
 const goalElement = document.querySelector("[data-goal]");
 const proportionalElement = document.querySelector("[data-proportional]");
 const soldElement = document.querySelector("[data-sold]");
@@ -124,11 +119,17 @@ function showFormSoldValue() {
 
 function handleSoldValue() {
     const data = JSON.parse(localStorage.getItem("DATA_OF_GOAL") || "[]");
-
+    let soldValue = "";
     const inputValue = document.querySelector("#input-sold");
 
-    data.sold += parseFloat(inputValue.value);
+    soldValue = data.sold + parseFloat(inputValue.value);
     data.daily = (parseFloat(data.goal) - parseFloat(data.sold)) / data.days;
+
+    data.sold = parseFloat(soldValue);
+
+    if (data.sold > data.goal) {
+        data.daily = 0;
+    }
 
     localStorage.setItem("DATA_OF_GOAL", JSON.stringify(data));
 
