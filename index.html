@@ -20,27 +20,27 @@
                 <ul class="main-content">
                     <li>
                         <p>Meta total:</p>
-                        <span>R$150.000,00</span>
+                        <span data-goal></span>
                     </li>
                     <li>
                         <p>Proporcional a meta:</p>
-                        <span>R$27.550,00</span>
+                        <span data-proportional></span>
                     </li>
                     <li>
                         <p>Valor vendido:</p>
-                        <span>R$47.190,00</span>
+                        <span data-sold></span>
                     </li>
                     <li>
                         <p>Dias faltando:</p>
-                        <span>19</span>
+                        <span data-days></span>
                     </li>
                     <li>
                         <p>Meta diária:</p>
-                        <span>R$5.555,00</span>
+                        <span data-daily></span>
                     </li>
                 </ul>
                 <div class="group-btn">
-                    <button>Add valor</button>
+                    <button onclick="showFormSoldValue()">Add valor</button>
                     <button>Remover valor</button>
                     <button onclick="showFormCreateGoal()">
                         Add meta do mês
@@ -56,6 +56,18 @@
                             placeholder="R$00,00"
                         />
                         <button onclick="createGoal()">ADICIONAR</button>
+                    </div>
+                </section>
+                <section class="shadow-section-2">
+                    <div class="add-sold-content">
+                        <h3>Adicionar valor vendido</h3>
+                        <input
+                            id="input-sold"
+                            inputmode="numeric"
+                            type="number"
+                            placeholder="R$00,00"
+                        />
+                        <button onclick="handleSoldValue()">ADICIONAR</button>
                     </div>
                 </section>
             </section>
