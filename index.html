@@ -44,12 +44,12 @@
                     <button onclick="showFormRemoveSold()">
                         Remover venda
                     </button>
-                    <button>Apagar meta</button>
+                    <button onclick="handleDeleteGoal()">Apagar meta</button>
                     <button onclick="showFormCreateGoal()">
                         Adicionar meta
                     </button>
                 </div>
-                <section class="shadow-section">
+                <section onclick="hideForm(this)" class="shadow-section">
                     <div class="add-goal-content">
                         <h3>Adicionar valor á meta</h3>
                         <input
@@ -61,7 +61,7 @@
                         <button onclick="createGoal()">ADICIONAR</button>
                     </div>
                 </section>
-                <section class="shadow-section-2">
+                <section onclick="hideForm(this)" class="shadow-section-2">
                     <div class="add-sold-content">
                         <h3>Adicionar valor vendido</h3>
                         <input
@@ -73,7 +73,7 @@
                         <button onclick="handleSoldValue()">ADICIONAR</button>
                     </div>
                 </section>
-                <section class="shadow-section-3">
+                <section onclick="hideForm(this)" class="shadow-section-3">
                     <div class="remove-sold-content">
                         <h3>Remover valor vendido</h3>
                         <input
