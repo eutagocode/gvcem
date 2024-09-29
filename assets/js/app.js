@@ -53,6 +53,10 @@ function showFormCreateGoal() {
     document.querySelector(".shadow-section").style.display = "flex";
 }
 
+function hideForm(element) {
+    element.style.display = "none";
+}
+
 function proportionalWorkingDays(year, month, currentDay, goal) {
     const businessDays = getBusinessDays(year, month);
 
@@ -162,3 +166,5 @@ function handleRemoveSold() {
 
     document.querySelector(".shadow-section-3").style.display = "none";
 }
+
+function handleDeleteGoal() {}
