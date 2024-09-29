@@ -101,6 +101,7 @@
     gap: 0.5rem;
     padding: 0 1rem;
     padding-bottom: 1rem;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
 }
 
 .group-btn > button {
@@ -116,19 +117,4 @@
 
 .group-btn > button:hover {
     border: 2px solid var(--color-green);
-}
-
-.group-btn > button:nth-child(1) {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-}
-
-.group-btn > button:nth-child(2) {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-}
-
-.group-btn > button:nth-child(3) {
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
 }
