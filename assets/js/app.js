@@ -142,3 +142,23 @@ function updateDaily() {
 
     localStorage.setItem("DATA_OF_GOAL", JSON.stringify(data));
 }
+
+function showFormRemoveSold() {
+    document.querySelector(".shadow-section-3").style.display = "flex";
+}
+
+function handleRemoveSold() {
+    const data = JSON.parse(localStorage.getItem("DATA_OF_GOAL") || "[]");
+
+    const inputRemove = document.querySelector("#input-remove-sold");
+
+    data.sold = data.sold - parseFloat(inputRemove.value);
+
+    localStorage.setItem("DATA_OF_GOAL", JSON.stringify(data));
+
+    updateDaily();
+
+    fetchGoal();
+
+    document.querySelector(".shadow-section-3").style.display = "none";
+}
