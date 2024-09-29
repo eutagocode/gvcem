@@ -40,10 +40,13 @@
                     </li>
                 </ul>
                 <div class="group-btn">
-                    <button onclick="showFormSoldValue()">Add valor</button>
-                    <button>Remover valor</button>
+                    <button onclick="showFormSoldValue()">Add venda</button>
+                    <button onclick="showFormRemoveSold()">
+                        Remover venda
+                    </button>
+                    <button>Apagar meta</button>
                     <button onclick="showFormCreateGoal()">
-                        Add meta do mês
+                        Adicionar meta
                     </button>
                 </div>
                 <section class="shadow-section">
@@ -68,6 +71,18 @@
                             placeholder="R$00,00"
                         />
                         <button onclick="handleSoldValue()">ADICIONAR</button>
+                    </div>
+                </section>
+                <section class="shadow-section-3">
+                    <div class="remove-sold-content">
+                        <h3>Remover valor vendido</h3>
+                        <input
+                            id="input-remove-sold"
+                            inputmode="numeric"
+                            type="number"
+                            placeholder="R$00,00"
+                        />
+                        <button onclick="handleRemoveSold()">REMOVER</button>
                     </div>
                 </section>
             </section>
