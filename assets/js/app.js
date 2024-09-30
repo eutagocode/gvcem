@@ -54,7 +54,6 @@ function showFormCreateGoal() {
 }
 
 function hideForm(element) {
-    element.style.display = "none";
 }
 
 function proportionalWorkingDays(year, month, currentDay, goal) {
