@@ -53,12 +53,8 @@ function showFormCreateGoal() {
     document.querySelector(".shadow-section").style.display = "flex";
 }
 
-<<<<<<< HEAD
-=======
-function hideForm(element) {
-}
+function hideForm(element) {}
 
->>>>>>> 64de8e83d6e2f6d8f9446d34752e2305a240f43b
 function proportionalWorkingDays(year, month, currentDay, goal) {
     const businessDays = getBusinessDays(year, month);
 
