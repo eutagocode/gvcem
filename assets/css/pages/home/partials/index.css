@@ -123,18 +123,26 @@
     .content {
         max-height: 100%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
     .header-content {
-        height: 60px;
+        height: 70px;
     }
 
     .header-content > h1 {
         font-size: 1.8rem;
     }
 
+    .main-content {
+        display: grid;
+        grid-template: repeat(5, 1fr) / 1fr;
+        height: 100%;
+    }
+
     .main-content > li {
-        height: 70px;
+        height: 100%;
     }
 
     .main-content > li::after {
@@ -143,5 +151,9 @@
 
     .main-content > li > :is(p, span) {
         font-size: 1.3rem;
+    }
+
+    .group-btn {
+        display: grid;
     }
 }
