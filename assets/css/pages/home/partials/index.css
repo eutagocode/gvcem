@@ -118,3 +118,30 @@
 .group-btn > button:hover {
     border: 2px solid var(--color-green);
 }
+
+@media screen and (max-width: 576px) {
+    .content {
+        max-height: 100%;
+        height: 100%;
+    }
+
+    .header-content {
+        height: 60px;
+    }
+
+    .header-content > h1 {
+        font-size: 1.8rem;
+    }
+
+    .main-content > li {
+        height: 70px;
+    }
+
+    .main-content > li::after {
+        inset: 3px;
+    }
+
+    .main-content > li > :is(p, span) {
+        font-size: 1.3rem;
+    }
+}

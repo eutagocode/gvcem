@@ -44,12 +44,12 @@
                     <button onclick="showFormRemoveSold()">
                         Remover venda
                     </button>
-                    <button onclick="handleDeleteGoal()">Apagar meta</button>
+                    <button onclick="showFormDeleteGoal()">Apagar meta</button>
                     <button onclick="showFormCreateGoal()">
                         Adicionar meta
                     </button>
                 </div>
-                <section onclick="hideForm(this)" class="shadow-section">
+                <section class="shadow-section">
                     <div class="add-goal-content">
                         <h3>Adicionar valor á meta</h3>
                         <input
@@ -61,7 +61,7 @@
                         <button onclick="createGoal()">ADICIONAR</button>
                     </div>
                 </section>
-                <section onclick="hideForm(this)" class="shadow-section-2">
+                <section class="shadow-section-2">
                     <div class="add-sold-content">
                         <h3>Adicionar valor vendido</h3>
                         <input
@@ -73,7 +73,7 @@
                         <button onclick="handleSoldValue()">ADICIONAR</button>
                     </div>
                 </section>
-                <section onclick="hideForm(this)" class="shadow-section-3">
+                <section class="shadow-section-3">
                     <div class="remove-sold-content">
                         <h3>Remover valor vendido</h3>
                         <input
@@ -83,6 +83,12 @@
                             placeholder="R$00,00"
                         />
                         <button onclick="handleRemoveSold()">REMOVER</button>
+                    </div>
+                </section>
+                <section class="shadow-section-4">
+                    <div class="remove-goal-content">
+                        <h3>Tem certeza que quer apagar todos os dados?</h3>
+                        <button onclick="handleDeleteGoal()">Confirmar</button>
                     </div>
                 </section>
             </section>

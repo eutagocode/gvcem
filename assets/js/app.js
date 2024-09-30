@@ -53,10 +53,6 @@ function showFormCreateGoal() {
     document.querySelector(".shadow-section").style.display = "flex";
 }
 
-function hideForm(element) {
-    element.style.display = "none";
-}
-
 function proportionalWorkingDays(year, month, currentDay, goal) {
     const businessDays = getBusinessDays(year, month);
 
@@ -167,4 +163,14 @@ function handleRemoveSold() {
     document.querySelector(".shadow-section-3").style.display = "none";
 }
 
-function handleDeleteGoal() {}
+function showFormDeleteGoal() {
+    document.querySelector(".shadow-section-4").style.display = "flex";
+}
+
+function handleDeleteGoal() {
+    localStorage.removeItem("DATA_OF_GOAL");
+
+    fetchGoal();
+
+    document.querySelector(".shadow-section-4").style.display = "none";
+}
