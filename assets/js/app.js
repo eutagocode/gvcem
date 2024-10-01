@@ -57,7 +57,6 @@ function hideForm(element) {}
 
 function proportionalWorkingDays(year, month, currentDay, goal) {
     const businessDays = getBusinessDays(year, month);
-
     if (currentDay > businessDays) {
         return goal;
     }
@@ -73,8 +72,8 @@ function getRemainingBusinessDays(year, month, currentDay) {
 
     let businessDaysRemaining = [];
 
-    for (let day = today; day <= lastDay--; day.setDate(day.getDate() + 1)) {
-        const dayOfTheWeek = day.getDate();
+    for (let day = today; day <= lastDay; day.setDate(day.getDate() + 1)) {
+        let dayOfTheWeek = day.getDay();
         if (dayOfTheWeek !== 0) {
             businessDaysRemaining.push(new Date(day));
         }
@@ -90,7 +89,7 @@ function getBusinessDays(year, month) {
     let businessDays = [];
 
     for (let day = firstDay; day <= lastDay; day.setDate(day.getDate() + 1)) {
-        const dayOfTheWeek = day.getDate();
+        let dayOfTheWeek = day.getDay();
 
         if (dayOfTheWeek !== 0) {
             businessDays.push(new Date(day));
