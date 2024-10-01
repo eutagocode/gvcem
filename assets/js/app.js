@@ -31,7 +31,7 @@ function fetchGoal() {
     proportionalElement.innerHTML = data.proportional;
     soldElement.innerHTML = data.sold;
     daysElement.innerHTML = data.days;
-    dailyElement.innerHTML = data.daily;
+    dailyElement.innerHTML = Math.round(data.daily);
 }
 
 function switchMonth() {
