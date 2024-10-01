@@ -28,9 +28,9 @@ function fetchGoal() {
     const data = JSON.parse(localStorage.getItem("DATA_OF_GOAL") || "[]");
 
     goalElement.innerHTML = data.goal;
-    proportionalElement.innerHTML = data.proportional;
-    soldElement.innerHTML = data.sold;
-    daysElement.innerHTML = data.days;
+    proportionalElement.innerHTML = Math.round(data.proportional);
+    soldElement.innerHTML = Math.round(data.sold);
+    daysElement.innerHTML = Math.round(data.days);
     dailyElement.innerHTML = Math.round(data.daily);
 }
 
