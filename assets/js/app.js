@@ -95,7 +95,12 @@ function updateRemainingDays() {
 }
 
 function proportionalWorkingDays(year, month, currentDay, goal) {
+    const data = JSON.parse(localStorage.getItem("DATA_OF_GOAL") || "[]");
     const businessDays = getBusinessDays(year, month);
+
+    if (data.days == 1) {
+        return goal;
+    }
 
     let proportional = (currentDay / businessDays) * goal;
 
