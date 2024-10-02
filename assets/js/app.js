@@ -95,13 +95,9 @@ function updateRemainingDays() {
 }
 
 function proportionalWorkingDays(year, month, currentDay, goal) {
-    const businessDays = getRemainingBusinessDays(year, month, currentDay);
-    if (currentDay > businessDays) {
-        return goal;
-    }
+    const businessDays = getBusinessDays(year, month);
 
-    let proportional =
-        (currentDay / getRemainingBusinessDays(year, month, currentDay)) * goal;
+    let proportional = (currentDay / businessDays) * goal;
 
     return Math.round(proportional);
 }
