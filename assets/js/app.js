@@ -102,6 +102,10 @@ function proportionalWorkingDays(year, month, currentDay, goal) {
         return goal;
     }
 
+    if (parseFloat(data.proportional) >= data.goal) {
+        return goal;
+    }
+
     let proportional = (currentDay / businessDays) * goal;
 
     return Math.round(proportional);
