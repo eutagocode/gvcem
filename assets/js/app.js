@@ -46,14 +46,53 @@ function switchMonth() {
     }
 }
 
-addEventListener("DOMContentLoaded", fetchGoal());
-addEventListener("DOMContentLoaded", switchMonth());
+addEventListener("DOMContentLoaded", async () => {
+    await fetchGoal();
+    await switchMonth();
+    await updateRemainingDays();
+    await updateProportional();
+});
 
 function showFormCreateGoal() {
     document.querySelector(".shadow-section").style.display = "flex";
 }
 
-function hideForm(element) {}
+function updateProportional() {
+    const data = JSON.parse(localStorage.getItem("DATA_OF_GOAL") || "[]");
+
+    let proportionalValue = proportionalWorkingDays(
+        date.getFullYear(),
+        date.getMonth(),
+        date.getDate(),
+        data.goal,
+    );
+
+    data.proportional = proportionalValue;
+
+    localStorage.setItem("DATA_OF_GOAL", JSON.stringify(data));
+
+    updateDaily();
+
+    fetchGoal();
+}
+
+function updateRemainingDays() {
+    const data = JSON.parse(localStorage.getItem("DATA_OF_GOAL") || "[]");
+
+    let missingDays = getRemainingBusinessDays(
+        date.getFullYear(),
+        date.getMonth(),
+        date.getDate(),
+    );
+
+    data.days = missingDays;
+
+    localStorage.setItem("DATA_OF_GOAL", JSON.stringify(data));
+
+    updateDaily();
+
+    fetchGoal();
+}
 
 function proportionalWorkingDays(year, month, currentDay, goal) {
     const businessDays = getBusinessDays(year, month);
@@ -61,7 +100,7 @@ function proportionalWorkingDays(year, month, currentDay, goal) {
         return goal;
     }
 
-    const proportional = (currentDay / getBusinessDays(year, month)) * goal;
+    let proportional = (currentDay / getBusinessDays(year, month)) * goal;
 
     return Math.round(proportional);
 }
@@ -111,6 +150,8 @@ function createGoal() {
 
     fetchGoal();
 
+    inputGoal.value = "";
+
     document.querySelector(".shadow-section").style.display = "none";
 }
 
@@ -132,6 +173,8 @@ function handleSoldValue() {
     updateDaily();
 
     fetchGoal();
+
+    inputValue.value = "";
 
     document.querySelector(".shadow-section-2").style.display = "none";
 }
@@ -160,6 +203,8 @@ function handleRemoveSold() {
     updateDaily();
 
     fetchGoal();
+
+    inputRemove.value = "";
 
     document.querySelector(".shadow-section-3").style.display = "none";
 }
