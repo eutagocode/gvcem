@@ -95,16 +95,24 @@ function updateRemainingDays() {
 }
 
 function proportionalWorkingDays(year, month, currentDay, goal) {
-    const data = JSON.parse(localStorage.getItem("DATA_OF_GOAL") || "[]");
-   
-    const today = date.getDay();
-    if (today == 0) return
+    const today = new Date(year, month, currentDay);
+    let lastDay = new Date(year, month + 1, 0);
 
-        if (data.days == 1) {
-            return goal;
+    let proportional;
+    let proportionalDays = [];
+
+    for (let day = today; day <= lastDay; day.setDate(day.getDate() + 1)) {
+        let dayOfTheWeek = day.getDay();
+        if (dayOfTheWeek !== 0) {
+            proportionalDays.push(new Date(day));
         }
+    }
 
-        let proportional = (currentDay / getBusinessDays(year, month)) * goal;
+    proportionalDays.map((proportionalDay) => {
+        if (currentDay === proportionalDay.getDate()) {
+            proportional = (currentDay / getBusinessDays(year, month)) * goal;
+        }
+    });
 
     return Math.round(proportional);
 }
