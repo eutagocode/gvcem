@@ -110,7 +110,7 @@ function proportionalWorkingDays(year, month, currentDay, goal) {
 
     proportionalDays.map((proportionalDay) => {
         if (currentDay === proportionalDay.getDate()) {
-            proportional = (currentDay / getBusinessDays(year, month)) * goal;
+            proportional = (currentDay / lastDay.getDate()) * goal;
         }
     });
 
