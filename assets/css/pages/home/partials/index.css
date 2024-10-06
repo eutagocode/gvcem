@@ -87,6 +87,7 @@
 
 .main-content > li > span {
     font-family: var(--extrabold);
+    letter-spacing: 0.12rem;
 }
 
 @keyframes spin {
