@@ -1,98 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./assets/css/index.css" />
-        <link
-            rel="shortcut icon"
-            href="./assets/docs/images/activity.svg"
-            type="image/x-icon"
-        />
-        <title>Gerenciamento de Vendas CEM</title>
-    </head>
-    <body>
-        <div class="container">
-            <section class="content">
-                <header class="header-content">
-                    <h1>GV<span>CEM</span></h1>
-                </header>
-                <ul class="main-content">
-                    <li>
-                        <p>Meta total:</p>
-                        <span data-goal></span>
-                    </li>
-                    <li>
-                        <p>Proporcional a meta:</p>
-                        <span data-proportional></span>
-                    </li>
-                    <li>
-                        <p>Valor vendido:</p>
-                        <span data-sold></span>
-                    </li>
-                    <li>
-                        <p>Dias faltando:</p>
-                        <span data-days></span>
-                    </li>
-                    <li>
-                        <p>Meta diária:</p>
-                        <span data-daily></span>
-                    </li>
-                </ul>
-                <div class="group-btn">
-                    <button onclick="showFormSoldValue()">Add venda</button>
-                    <button onclick="showFormRemoveSold()">
-                        Remover venda
-                    </button>
-                    <button onclick="showFormDeleteGoal()">Apagar meta</button>
-                    <button onclick="showFormCreateGoal()">
-                        Adicionar meta
-                    </button>
-                </div>
-                <section class="shadow-section">
-                    <div class="add-goal-content">
-                        <h3>Adicionar valor á meta</h3>
-                        <input
-                            id="input-goal"
-                            inputmode="numeric"
-                            type="number"
-                            placeholder="R$00,00"
-                        />
-                        <button onclick="createGoal()">ADICIONAR</button>
-                    </div>
-                </section>
-                <section class="shadow-section-2">
-                    <div class="add-sold-content">
-                        <h3>Adicionar valor vendido</h3>
-                        <input
-                            id="input-sold"
-                            inputmode="numeric"
-                            type="number"
-                            placeholder="R$00,00"
-                        />
-                        <button onclick="handleSoldValue()">ADICIONAR</button>
-                    </div>
-                </section>
-                <section class="shadow-section-3">
-                    <div class="remove-sold-content">
-                        <h3>Remover valor vendido</h3>
-                        <input
-                            id="input-remove-sold"
-                            inputmode="numeric"
-                            type="number"
-                            placeholder="R$00,00"
-                        />
-                        <button onclick="handleRemoveSold()">REMOVER</button>
-                    </div>
-                </section>
-                <section class="shadow-section-4">
-                    <div class="remove-goal-content">
-                        <h3>Tem certeza que quer apagar todos os dados?</h3>
-                        <button onclick="handleDeleteGoal()">Confirmar</button>
-                    </div>
-                </section>
-            </section>
-        </div>
-        <script src="./assets/js/app.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
